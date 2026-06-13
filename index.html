@@ -1,0 +1,532 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Naura Finda Khalisah Putri | Portofolio</title>
+<meta name="description" content="Portofolio pribadi Naura Finda Khalisah Putri">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#07090f;
+--card:rgba(255,255,255,.05);
+--border:rgba(255,255,255,.08);
+--text:#f5f5f5;
+--muted:#9ca3af;
+--accent:#ef4444;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+inset:0;
+z-index:-1;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+height:72px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 24px;
+background:rgba(7,9,15,.8);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border);
+z-index:999;
+}
+
+.logo{
+font-weight:800;
+font-size:1.3rem;
+}
+
+nav{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:var(--muted);
+transition:.3s;
+}
+
+nav a:hover{
+color:white;
+}
+
+section{
+padding:100px 8%;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+border:1px solid var(--border);
+border-radius:999px;
+font-family:"Space Mono", monospace;
+color:#cbd5e1;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,6rem);
+line-height:.95;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.1rem;
+color:var(--muted);
+line-height:1.8;
+}
+
+.hero-img{
+width:320px;
+height:320px;
+border-radius:50%;
+overflow:hidden;
+border:1px solid var(--border);
+background:var(--card);
+}
+
+.hero-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.buttons{
+margin-top:30px;
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:14px 22px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+}
+
+.primary{
+background:var(--accent);
+color:white;
+}
+
+.secondary{
+border:1px solid var(--border);
+color:white;
+}
+
+.title{
+font-size:2.2rem;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:20px;
+padding:24px;
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.tags{
+margin-top:15px;
+}
+
+.tags span{
+display:inline-block;
+padding:6px 10px;
+margin:3px;
+border:1px solid var(--border);
+border-radius:8px;
+font-size:.8rem;
+font-family:"Space Mono", monospace;
+}
+
+.timeline{
+border-left:2px solid var(--border);
+padding-left:25px;
+}
+
+.item{
+position:relative;
+margin-bottom:30px;
+}
+
+.item::before{
+content:'';
+width:12px;
+height:12px;
+border-radius:50%;
+background:var(--accent);
+position:absolute;
+left:-32px;
+top:6px;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+color:var(--accent);
+text-decoration:none;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(25px);
+transition:.7s;
+}
+
+.reveal.show{
+opacity:1;
+transform:none;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:var(--muted);
+}
+
+@media(max-width:900px){
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+justify-content:center;
+}
+
+.hero-img{
+width:240px;
+height:240px;
+}
+
+.buttons{
+justify-content:center;
+}
+
+nav{
+gap:12px;
+}
+
+nav a{
+font-size:.85rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<header>
+<div class="logo">Naura.</div>
+
+<nav>
+<a href="#about">Tentang</a>
+<a href="#skills">Keahlian</a>
+<a href="#projects">Proyek</a>
+<a href="#timeline">Perjalanan</a>
+<a href="#contact">Kontak</a>
+</nav>
+</header>
+
+<section class="hero" id="about">
+
+<div class="hero-content">
+
+<span class="badge">
+Mahasiswa Sistem Komputer • Universitas Pamulang
+</span>
+
+<h1>
+Naura Finda<br>
+Khalisah Putri
+</h1>
+
+<p>
+Saya adalah mahasiswa Sistem Komputer Universitas Pamulang yang memiliki minat
+dalam bidang teknologi, desain kreatif, fotografi, dan pembuatan konten digital.
+Saya senang mempelajari hal baru, mengembangkan keterampilan, serta menciptakan
+karya yang bermanfaat dan inovatif.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn primary">Lihat Proyek</a>
+<a href="#contact" class="btn secondary">Hubungi Saya</a>
+</div>
+
+</div>
+
+<div class="hero-img">
+<img src="foto.jpg" alt="Foto Naura">
+</div>
+
+</section>
+
+<section id="skills" class="reveal">
+
+<h2 class="title">Keahlian</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Ilustrasi Digital</h3>
+<p>Membuat ilustrasi kreatif menggunakan berbagai aplikasi desain digital.</p>
+</div>
+
+<div class="card">
+<h3>Fotografi</h3>
+<p>Mengambil dan mengedit foto dengan komposisi yang menarik dan profesional.</p>
+</div>
+
+<div class="card">
+<h3>Pembuatan Konten</h3>
+<p>Membuat konten kreatif untuk media sosial dan platform digital.</p>
+</div>
+
+<div class="card">
+<h3>Public Speaking</h3>
+<p>Mampu melakukan presentasi dan berbicara di depan umum dengan percaya diri.</p>
+</div>
+
+<div class="card">
+<h3>Desain Grafis</h3>
+<p>Mendesain poster, banner, logo, dan berbagai kebutuhan visual lainnya.</p>
+</div>
+
+<div class="card">
+<h3>Menulis Kreatif</h3>
+<p>Membuat artikel, blog, dan berbagai konten tulisan yang menarik.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="reveal">
+
+<h2 class="title">Proyek</h2>
+
+<div class="projects">
+
+<div class="card">
+<h3>Katalog Fashion Digital</h3>
+<p>Membuat katalog digital yang menampilkan konsep fashion dan gaya berpakaian modern.</p>
+<div class="tags">
+<span>Fashion</span>
+<span>Desain</span>
+</div>
+</div>
+
+<div class="card">
+<h3>Blog Pribadi</h3>
+<p>Menulis artikel mengenai produktivitas, gaya hidup, dan pengembangan diri.</p>
+<div class="tags">
+<span>Menulis</span>
+<span>Konten</span>
+</div>
+</div>
+
+<div class="card">
+<h3>Portofolio Fotografi</h3>
+<p>Mengumpulkan hasil karya fotografi potret dan fotografi jalanan.</p>
+<div class="tags">
+<span>Fotografi</span>
+<span>Editing</span>
+</div>
+</div>
+
+<div class="card">
+<h3>Konsep Branding</h3>
+<p>Membuat identitas visual, logo, dan panduan branding untuk sebuah merek.</p>
+<div class="tags">
+<span>Branding</span>
+<span>Figma</span>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="timeline" class="reveal">
+
+<h2 class="title">Perjalanan</h2>
+
+<div class="timeline">
+
+<div class="item">
+<h3>2022</h3>
+<p>Mulai mempelajari desain digital dan seni kreatif.</p>
+</div>
+
+<div class="item">
+<h3>2023</h3>
+<p>Membuat berbagai konten digital dan mulai aktif di media sosial.</p>
+</div>
+
+<div class="item">
+<h3>2024</h3>
+<p>Mengembangkan kemampuan fotografi dan editing profesional.</p>
+</div>
+
+<div class="item">
+<h3>2025</h3>
+<p>Membuat berbagai proyek branding dan desain visual.</p>
+</div>
+
+<div class="item">
+<h3>2026</h3>
+<p>Membangun dan meluncurkan website portofolio pribadi.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact reveal">
+
+<h2 class="title">Kontak</h2>
+
+<p>Email</p>
+<p>
+<a href="mailto:naurafinda31@gmail.com">
+naurafinda31@gmail.com
+</a>
+</p>
+
+<br>
+
+<p>
+<a href="https://github.com/findanaura31-boop" target="_blank">
+GitHub / findanaura31-boop
+</a>
+</p>
+
+</section>
+
+<footer>
+© 2026 Naura Finda Khalisah Putri. Seluruh Hak Cipta Dilindungi.
+</footer>
+
+<script>
+const c=document.getElementById('bg');
+const x=c.getContext('2d');
+
+let w,h,p=[];
+
+function rs(){
+w=c.width=innerWidth;
+h=c.height=innerHeight;
+}
+
+rs();
+addEventListener('resize',rs);
+
+for(let i=0;i<70;i++){
+p.push({
+x:Math.random()*w,
+y:Math.random()*h,
+r:Math.random()*2,
+dx:(Math.random()-.5)*.3,
+dy:(Math.random()-.5)*.3
+});
+}
+
+(function animasi(){
+x.clearRect(0,0,w,h);
+
+p.forEach(v=>{
+x.beginPath();
+x.arc(v.x,v.y,v.r,0,6.28);
+x.fillStyle='rgba(239,68,68,.6)';
+x.fill();
+
+v.x+=v.dx;
+v.y+=v.dy;
+
+if(v.x<0||v.x>w) v.dx*=-1;
+if(v.y<0||v.y>h) v.dy*=-1;
+});
+
+requestAnimationFrame(animasi);
+})();
+
+const observer=new IntersectionObserver(
+entries=>{
+entries.forEach(item=>{
+if(item.isIntersecting){
+item.target.classList.add('show');
+}
+});
+},
+{threshold:.1}
+);
+
+document.querySelectorAll('.reveal').forEach(el=>{
+observer.observe(el);
+});
+</script>
+
+</body>
+</html>
+```
